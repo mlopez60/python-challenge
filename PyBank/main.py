@@ -61,12 +61,8 @@ with open(budget_data , "r") as data:
     print(f"Total Months: {TotalMonths}")
     print(f"Total: ${NetTotal}")
     print(f"Average Change: ${AveragePLChange}")
-    #print(Months[MaxMonthIndex])
     print(f"Greatest Increase in Profits: {Months[MaxMonthIndex]} (${MaxPLChange})")
     print(f"Greatest Decrease in Profits: {Months[MinMonthIndex]} (${MinPLChange})")
-    #print(MaxPLChange)
-    #print(Months[MinMonthIndex])
-    #print(MinPLChange)
 
 
 #Export to text file
