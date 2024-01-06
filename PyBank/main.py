@@ -58,6 +58,7 @@ with open(budget_data , "r") as data:
     MinMonthIndex=MonthlyChange.index(MinPLChange)
   
     print("Financial Analysis")
+    print("-------------------------")
     print(f"Total Months: {TotalMonths}")
     print(f"Total: ${NetTotal}")
     print(f"Average Change: ${AveragePLChange}")
@@ -68,6 +69,7 @@ with open(budget_data , "r") as data:
 #Export to text file
     Datatext = open("PyBankData.txt", "w")
     print("Financial Analysis", file=Datatext)
+    print("-------------------------", file=Datatext)
     print(f"Total Months: {TotalMonths}", file=Datatext)
     print(f"Total: ${NetTotal}", file=Datatext)
     print(f"Average Change: ${AveragePLChange}", file=Datatext)
