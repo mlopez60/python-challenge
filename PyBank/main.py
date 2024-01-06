@@ -50,7 +50,7 @@ with open(budget_data , "r") as data:
         PLprevious = int(each[1])
    
    #Calculations for getting the average and Max/min using python Sum,Max,Min Functions
-    AveragePLChange = (sum(MonthlyChange))/(TotalMonths-1)
+    AveragePLChange = round((sum(MonthlyChange))/(TotalMonths-1),2)
     MaxPLChange = max(MonthlyChange)
     MinPLChange = min(MonthlyChange)
     #Variable to find the Max,Min month to correspond with Max,Min value, using index and search in the Month List when printing
@@ -59,15 +59,22 @@ with open(budget_data , "r") as data:
   
     print("Financial Analysis")
     print(f"Total Months: {TotalMonths}")
-    print(f"Total: {NetTotal}")
-    print(f"Average Change: {AveragePLChange}")
+    print(f"Total: ${NetTotal}")
+    print(f"Average Change: ${AveragePLChange}")
     #print(Months[MaxMonthIndex])
-    print(f"Greatest Increase in Profits: {Months[MaxMonthIndex]} ({MaxPLChange})")
-    print(f"Greatest Decrease in Profits: {Months[MinMonthIndex]} ({MinPLChange})")
+    print(f"Greatest Increase in Profits: {Months[MaxMonthIndex]} (${MaxPLChange})")
+    print(f"Greatest Decrease in Profits: {Months[MinMonthIndex]} (${MinPLChange})")
     #print(MaxPLChange)
     #print(Months[MinMonthIndex])
     #print(MinPLChange)
 
 
 #Export to text file
-    
+    Datatext = open("PyBankData.txt", "w")
+    print("Financial Analysis", file=Datatext)
+    print(f"Total Months: {TotalMonths}", file=Datatext)
+    print(f"Total: ${NetTotal}", file=Datatext)
+    print(f"Average Change: ${AveragePLChange}", file=Datatext)
+    print(f"Greatest Increase in Profits: {Months[MaxMonthIndex]} (${MaxPLChange})", file=Datatext)
+    print(f"Greatest Decrease in Profits: {Months[MinMonthIndex]} (${MinPLChange})", file=Datatext)
+    Datatext.close()
