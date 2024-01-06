@@ -67,7 +67,8 @@ with open(budget_data , "r") as data:
 
 
 #Export to text file
-    Datatext = open("PyBankData.txt", "w")
+    bdata = os.path.join("analysis","PyBankData.txt")
+    Datatext = open(bdata, "w")
     print("Financial Analysis", file=Datatext)
     print("-------------------------", file=Datatext)
     print(f"Total Months: {TotalMonths}", file=Datatext)
