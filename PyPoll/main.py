@@ -55,7 +55,8 @@ with open(election_data , "r") as data:
     print(f"Winner: {winner}")
     print("-------------------------")
 #Export to text file
-    Datatext = open("PyPollData.txt", "w")
+    pdata = os.path.join("analysis","PyPollData.txt")
+    Datatext = open(pdata, "w")
     print("Election Results", file =Datatext)
     print("-------------------------", file =Datatext)
     print(F"Total Votes: {TotalVotes}", file =Datatext)
